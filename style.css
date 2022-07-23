@@ -1,0 +1,80 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+    background-color: #143F6B;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.piano {
+    width: 700px;
+    max-width: 90%;
+    height: 400px;
+    display: flex;
+    position: relative;
+}
+
+.key {
+    height: calc(var(--width) * 4);
+    width: var(--width);
+    cursor: pointer;
+}
+
+.key.white {
+    background-color: white;
+    --width: 100px;
+    border: 1px solid #333;
+}
+
+.white.pressed {
+    background-color: #ccc;
+}
+
+.key.black {
+    background-color: black;
+    --width: 60px;
+    margin-left: calc(var(--width) / -2);
+    margin-right: calc(var(--width) / -2);
+    z-index: 2;
+}
+
+.black.pressed {
+    background-color: #333;
+}
+
+.helper-text {
+    position: absolute;
+    bottom: 0px;
+    width: 700px;
+    max-width: 90%;
+    height: 100px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    color: white;
+}
+
+.helper-text>div {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.helper-text-items>span {
+    width: 110px;
+    text-align: center;
+}
